@@ -1,0 +1,16 @@
+{% extends "myapp/base.html" %}
+
+{% block title %}Site-Wide Caching Demo{% endblock %}
+
+{% block content %}
+    <h1>Site-Wide Caching Demo</h1>
+    <p>This page demonstrates site-wide caching using Django's middlewares.</p>
+    <div class="warning">
+        <p><strong>Important:</strong> For this demo to work, you must uncomment the <code>UpdateCacheMiddleware</code> and <code>FetchFromCacheMiddleware</code> in <code>settings.py</code>.</p>
+    </div>
+    <p><strong>Page Render Time:</strong> {{ current_time }}</p>
+    <p><strong>Total Products in DB:</strong> {{ products_count }}</p>
+
+    <p>Refresh the page. If the cache middleware is active, the time will not change on subsequent requests until the cache expires.</p>
+    <p>This method is simple but less granular for dynamic sites.</p>
+{% endblock %}

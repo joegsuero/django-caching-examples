@@ -1,0 +1,20 @@
+{% extends "myapp/base.html" %}
+
+{% block title %}External API Caching Demo{% endblock %}
+
+{% block content %}
+    <h1>External API Caching Demo</h1>
+    <p>This page demonstrates caching responses from a slow external API, a "useful antipattern".</p>
+
+    <h2>External API Data</h2>
+    {% if api_data.error %}
+        <div class="warning">
+            <p>Error retrieving API data: {{ api_data.error }}</p>
+        </div>
+    {% else %}
+        <pre>{{ api_data|tojson_pretty }}</pre> {# Or just {{ api_data }} #}
+    {% endif %}
+
+    <p>Observe the server console: you'll see messages indicating whether the data is fetched from the real API or from the cache.</p>
+    <p>The first time you load the page, you'll notice a small latency if the API is slow (simulated with `time.sleep` if you use a local mock).</p>
+{% endblock %}

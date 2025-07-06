@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Django Caching Demo{% endblock %}</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .status {
+            background-color: #e6ffe6;
+            border: 1px solid #c0ffc0;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .warning {
+            background-color: #fffbe6;
+            border: 1px solid #ffe8c0;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+        }
+
+        pre {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: monospace;
+        }
+
+        nav {
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <a href="/app/products/cached/">Per-View Cached</a>
+            <a href="/app/products/uncached/">Per-View Uncached (Comparison)</a>
+            <a href="/app/low-level-cache/">Low-Level API Cache</a>
+            <a href="/app/external-api-cached/">External API Cache</a>
+            <a href="/app/site-wide-cached/">Site-Wide Cache (Requires Middleware)</a>
+        </nav>
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>

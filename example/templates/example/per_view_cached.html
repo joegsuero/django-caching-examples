@@ -1,0 +1,26 @@
+{% extends "myapp/base.html" %}
+
+{% block title %}Per-View Caching Demo{% endblock %}
+
+{% block content %}
+    <h1>Per-View Caching Demo</h1>
+    <p>This page demonstrates the <code>@cache_page</code> decorator.</p>
+    <p><strong>Page Render Time:</strong> {{ current_time }}</p>
+    {% if cached_status == 'NO CACHE' %}
+        <div class="status">
+            <p>This content was NOT served from cache. The view and heavy logic were executed.</p>
+        </div>
+    {% else %}
+        <div class="status">
+            <p>This content WAS served from cache. The view was NOT executed.</p>
+        </div>
+    {% endif %}
+
+    <h2>Products (simulating heavy data)</h2>
+    <ul>
+        {% for product in products %}
+            <li>{{ product.name }} (Category: {{ product.category.name }}) - ${{ product.price }}</li>
+        {% endfor %}
+    </ul>
+    <p>Refresh the page to see the effect of the cache. The time displayed will not change if served from cache.</p>
+{% endblock %}

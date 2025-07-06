@@ -1,0 +1,27 @@
+{% load cache %}
+{% extends "myapp/base.html" %}
+
+{% block title %}Template Fragment Caching Demo{% endblock %}
+
+{% block content %}
+    <h1>Template Fragment Caching Demo</h1>
+    <p>This page demonstrates the use of <code>{% cache %}</code> to cache specific parts of a template.</p>
+
+    <div style="display: flex;">
+        <div style="flex: 1; padding-right: 20px;">
+            <p>Main content (not cached). Current time: <strong>{{ current_time }}</strong></p>
+            <p>Refresh the page. You'll see that the time changes, but the "Latest News" does not.</p>
+        </div>
+        <div class="sidebar" style="flex: 0 0 250px; background-color: #f0f0f0; padding: 15px; border-radius: 5px;">
+            {% cache 60 "my_sidebar_news" %} {# Cache for 60 seconds #}
+                <h3>Latest News (Cache: {{ cached_news_time }})</h3>
+                <ul>
+                    {# Simulate complex logic to get news #}
+                    {% for news in latest_news %}
+                        <li>{{ news }}</li>
+                    {% endfor %}
+                </ul>
+            {% endcache %}
+        </div>
+    </div>
+{% endblock %}

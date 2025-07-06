@@ -1,0 +1,15 @@
+{% extends "myapp/base.html" %}
+
+{% block title %}Low-Level Cache API Demo{% endblock %}
+
+{% block content %}
+    <h1>Low-Level Cache API Demo</h1>
+    <p>This page demonstrates direct use of <code>django.core.cache</code> to cache arbitrary data.</p>
+    <p>Search parameters: <strong>cat='{{ param1 }}'</strong>, <strong>price_gt={{ param2 }}</strong></p>
+
+    <h2>Data Retrieved (simulating heavy calculation/query)</h2>
+    <pre>{{ data }}</pre> {# You'll need a custom filter for this or just {{ data }} #}
+
+    <p>Observe the server console: the line "Calculating heavy data..." will only appear the first time for a given parameter combination.</p>
+    <p>Try changing the parameters in the URL (e.g., <code>/app/low-level-cache/?cat=Books&price_gt=10.00</code>) to see how a new cache is generated.</p>
+{% endblock %}
