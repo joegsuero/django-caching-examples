@@ -140,8 +140,8 @@ CACHES = {
     },
     'db_cache': {
         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
-        # Run 'python manage.py createcachetable my_cache_table'
-        'LOCATION': 'my_cache_table',
+        # Run 'python manage.py createcachetable cache_table'
+        'LOCATION': 'cache_table',
     },
     # For Redis:
     # 'redis_cache': {
