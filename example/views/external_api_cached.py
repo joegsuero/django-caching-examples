@@ -40,4 +40,4 @@ def get_external_api_data(item_id):
 def external_api_cached_view(request):
     item_id = 1  # For this example, always item 1
     api_data = get_external_api_data(item_id)
-    return render(request, 'myapp/external_api_cached.html', {'api_data': api_data})
+    return render(request, 'example/external_api_cached.html', {'api_data': api_data})

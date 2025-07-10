@@ -30,7 +30,7 @@ def low_level_api_view(request):
     param2 = float(request.GET.get('price_gt', 50.00))
 
     data = get_heavy_data_from_db(param1, param2)
-    return render(request, 'myapp/low_level_api.html', {
+    return render(request, 'example/low_level_api.html', {
         'data': data,
         'param1': param1,
         'param2': param2

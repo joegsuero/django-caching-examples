@@ -19,15 +19,15 @@ def per_view_cached_products(request):
     context = {
         'products': products,
         'current_time': datetime.now(),
-        'cached_status': 'NO CACHE'
+        'cached_status': 'NO CACHE (COMPARISON)'
     }
-    return render(request, 'myapp/per_view_cached.html', context)
+    return render(request, 'example/per_view_cached.html', context)
 
 
 def template_fragment_demo_view(request):
     latest_news = ["Headline A: Simulated heavy content",
                    "Headline B: More data here"]
-    return render(request, 'myapp/template_fragment_cached.html', {
+    return render(request, 'example/template_fragment_cached.html', {
         'latest_news': latest_news,
         'current_time': datetime.now(),
         'cached_news_time': datetime.now()  # To show when the news cache was generated
@@ -45,6 +45,6 @@ def per_view_uncached_products(request):
     context = {
         'products': products,
         'current_time': datetime.now(),
-        'cached_status': 'NO CACHE (COMPARISON)'
+        'cached_status': 'NO CACHE'
     }
-    return render(request, 'myapp/per_view_cached.html', context)
+    return render(request, 'example/per_view_cached.html', context)

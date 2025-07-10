@@ -1,4 +1,3 @@
-from .models import Category
 from django.db import models
 
 

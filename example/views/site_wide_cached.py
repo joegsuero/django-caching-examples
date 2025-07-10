@@ -13,7 +13,7 @@ def site_wide_cached_view(request):
     print("--- Executing site_wide_cached_view ---")
     heavy_computation(0.3)
     products_count = Product.objects.count()
-    return render(request, 'myapp/site_wide_cached.html', {
+    return render(request, 'example/site_wide_cached.html', {
         'products_count': products_count,
         'current_time': datetime.now()
     })
