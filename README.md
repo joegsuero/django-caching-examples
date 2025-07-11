@@ -84,6 +84,4 @@ The repository [`django-caching-Examples`](https://github.com/joegsuero/django-c
 
 By interacting with these examples and running the benchmarks, you will see firsthand the transformative power of caching. It's not just about reducing server load, but about delivering a superior user experience, a critical aspect of any modern application.
 
-I encourage you to clone the repository, play with the code, and see the magic of caching for yourself!
-
----
+I encourage you to clone the repository, play with the code, and see the magic of caching for yourself. If you found this repository helpful, please consider leaving a star on GitHub! For an even deeper dive into the definitive guide on Django caching, make sure to read the full [blog post](https://joegsuero.medium.com).
