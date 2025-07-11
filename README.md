@@ -8,7 +8,7 @@ I've created a GitHub repository with all the code examples I've discussed in th
 
 ### The Example and Benchmark Repository
 
-The repository [`django-caching-Examples`](https://github.com/joegsuero/django-caching-examples) contains:
+The repository [`django-caching-examples`](https://github.com/joegsuero/django-caching-examples) contains:
 
 - **Caching Configuration:** Demonstrations of `LocMemCache`, `FileBasedCache`, `DatabaseCache`, and examples of how to configure `RedisCache` and `MemcachedCache`.
 - **Per-View Caching:** Views decorated with `@cache_page` and a comparison view without caching so you can see the difference.
