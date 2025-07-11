@@ -1,7 +1,9 @@
 ---
-## Experience Caching in Action!
+## Experience Different Django Caching Methods
 
-I've shared the concepts and my experience with you, but nothing beats hands-on practice. I've created a GitHub repository with all the code examples we've discussed, ready for you to explore and, more importantly, test yourself.
+I've created a GitHub repository with all the code examples I've discussed in this [blog post](https://joegsuero.medium.com), ready for you to explore and, more importantly, test yourself.
+---
+
 ---
 
 ### The Example and Benchmark Repository
