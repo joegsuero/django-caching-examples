@@ -7,7 +7,7 @@ from example.utils import heavy_computation
 from example.models import Product
 
 
-# --- 4. Site-Wide Caching (Requires Middleware) ---
+# --- (Requires Middleware) ---
 # This view is simple, but will demonstrate Site-Wide Caching if the middleware is active.
 def site_wide_cached_view(request):
     print("--- Executing site_wide_cached_view ---")

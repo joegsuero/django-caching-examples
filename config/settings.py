@@ -127,7 +127,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # --- Cache Configuration ---
-# By default, I'll use LocMemCache for simplicity in the demo.
+# By default, I'll use LocMemCache for simplicity in the demo. Change to default what you want to use
+
 
 CACHES = {
     'default': {

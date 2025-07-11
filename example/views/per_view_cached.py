@@ -5,15 +5,14 @@ from example.models import Product
 from example.utils import heavy_computation
 
 
-# --- 1. Per-View Caching ---
-@cache_page(60 * 5)  # Cache for 5 minutes
+@cache_page(60 * 5)
 def per_view_cached_products(request):
     """
     View that simulates a heavy DB query and template rendering.
     Demonstrates the effect of the @cache_page decorator.
     """
     print("--- Executing per_view_cached_products (no cache) ---")
-    heavy_computation(0.5)  # Simulate a DB query or complex logic
+    heavy_computation(0.5)
     products = Product.objects.select_related(
         'category').filter(is_active=True)[:10]
     context = {
@@ -30,7 +29,7 @@ def template_fragment_demo_view(request):
     return render(request, 'example/template_fragment_cached.html', {
         'latest_news': latest_news,
         'current_time': datetime.now(),
-        'cached_news_time': datetime.now()  # To show when the news cache was generated
+        'cached_news_time': datetime.now()
     })
 
 

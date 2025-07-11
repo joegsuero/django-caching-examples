@@ -20,7 +20,7 @@ The repository [`django-caching-Examples`](https://github.com/joegsuero/django-c
 
 1.  **Clone the Repository:**
     ```bash
-    git clone [https://github.com/joegsuero/django-caching-examples.git](https://github.com/joegsuero/django-caching-examples.git)
+    git clone https://github.com/joegsuero/django-caching-examples.git
     cd django-caching-examples
     ```
 2.  **Set Up Your Environment:**
@@ -33,8 +33,9 @@ The repository [`django-caching-Examples`](https://github.com/joegsuero/django-c
 
     ```bash
     python manage.py migrate
+    python manage.py cmd_populate_db # For create mock data for tests
     python manage.py createsuperuser # Optional, to access the admin
-    python manage.py createcachetable my_cache_table # If you want to use DatabaseCache
+    python manage.py createcachetable cache_table # Optional, if you want to use DatabaseCache
     ```
 
     Visit `/admin` and add some **Categories** and **Products** to have data to work with in the examples.
@@ -53,7 +54,7 @@ The repository [`django-caching-Examples`](https://github.com/joegsuero/django-c
     - **No Cache (Baseline):**
 
       ```bash
-      ab -n 100 -c 10 [http://127.0.0.1:8000/app/products/uncached/](http://127.0.0.1:8000/app/products/uncached/)
+      ab -n 100 -c 10 http://127.0.0.1:8000/app/products/uncached/
       ```
 
       Look at the `Requests per second`. This will be your starting point.
@@ -62,13 +63,13 @@ The repository [`django-caching-Examples`](https://github.com/joegsuero/django-c
       First, "warm up" the cache (make a first request so the cache is generated):
 
       ```bash
-      ab -n 1 -c 1 [http://127.0.0.1:8000/app/products/cached/](http://127.0.0.1:8000/app/products/cached/)
+      ab -n 1 -c 1 http://127.0.0.1:8000/app/products/cached/
       ```
 
       Then, run the benchmark:
 
       ```bash
-      ab -n 100 -c 10 [http://127.0.0.1:8000/app/products/cached/](http://127.0.0.1:8000/app/products/cached/)
+      ab -n 100 -c 10 http://127.0.0.1:8000/app/products/cached/
       ```
 
       Compare the `Requests per second` with the no-cache example! The improvement should be significant.

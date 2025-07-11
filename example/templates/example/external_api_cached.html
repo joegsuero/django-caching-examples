@@ -12,7 +12,7 @@
             <p>Error retrieving API data: {{ api_data.error }}</p>
         </div>
     {% else %}
-        <pre>{{ api_data|tojson_pretty }}</pre> {# Or just {{ api_data }} #}
+        <pre>{{ api_data }}</pre>
     {% endif %}
 
     <p>Observe the server console: you'll see messages indicating whether the data is fetched from the real API or from the cache.</p>
